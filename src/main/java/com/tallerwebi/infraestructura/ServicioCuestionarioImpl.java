@@ -1,27 +1,21 @@
 package com.tallerwebi.infraestructura;
 
-import com.tallerwebi.dominio.Cuestionario;
+import com.tallerwebi.auxiliar.Respuestas;
+import com.tallerwebi.dominio.ServicioCuestionario;
+import org.springframework.stereotype.Service;
 
-public class ServicioCuestionarioImpl {
-    private String pisos = "Para hace pisos necesitas tal y tal cosa, preferentemente haces tal cosa antes que otra.."
+@Service
+public class ServicioCuestionarioImpl implements ServicioCuestionario {
+    public String validarRespuestas(String respuesta) {
+        Respuestas resp = new Respuestas();
+        // Realiza la validación de las respuestas aquí
 
-    public void evaluacionPregunta1(Cuestionario cuestionario){
-        //Construccion de pisos.
-        //Texto = "Materiales, paso a paso y los profesionales a usar
-        cuestionario.tipoConstruccion = "pisos";
-        return pisos;
-
-    }
-
-    public void evaluacionPregunta2(Cuestionario cuestionario){
-        if(cuestionario.tipoConstruccion == "pisos") {
-            dimensionesPisos(cuestionario.dimensiones);
+        if(respuesta.equals("piso")){
+            return resp.piso;
+        }else if(respuesta.equals("pared")){
+            return resp.pared;
+        }else{
+            return resp.habitacion;
         }
-
     }
 }
-
-//todo Controlador
-//formPostMap [a, b, 32x25,
-
-//String textitoQueVaAIrALaVista = ServicioCuestionarioImpl.evaluacionPregunta1(cuestionario);

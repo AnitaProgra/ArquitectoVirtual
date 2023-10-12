@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Integrador Taller Web I</title>
+
+    <!-- Boostrap core css -->
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.0/css/bootstrap.min.css}"/>
+</head>
+<body>
+<main role="main" class="container">
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+        <div id="form-inicial" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="card shadow mt-4 mb-4">
+                <div class="card-body">
+                    <h1>Formulario proyecto:</h1>
+                    <form th:action="@{/guardarRespuesta}" method="post" th:object="${datosProyecto}">
+                        <div>
+                            <div>
+                                <h2>Tipo de proyecto</h2>
+                                <label>Pisos</label>
+                                <input type="radio" th:value="piso" name="tipo_proyecto">
+                                <label>Pared</label>
+                                <input type="radio" th:value="pared" name="tipo_proyecto">
+                                <label>habitacion</label>
+                                <input type="radio" th:value="habitacion" name="tipo_proyecto">
+
+                            </div>
+                            <br>
+                            <div>
+                                <h2>Dimensiones</h2>
+                                <label for="altura">Altura</label>
+                                <input type="text"  name="altura" id="altura" th:field="*{altura}">
+                                <label for="ancho">Ancho</label>
+                                <input type="text" name="ancho" id="ancho" th:field="*{ancho}">
+                                <label for="largo">Largo</label>
+                                <input type="text" name="ancho" id="largo" th:field="*{largo}">
+                            </div>
+                            <br>
+                        </div>
+                        <!--<button type="button" id="siguiente" onclick="siguientePregunta()">Siguiente</button>-->
+                        <button type="submit" >Finalizar</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!--<script>
+    var preguntaActual = 0;
+
+    function siguientePregunta() {
+        var preguntas = document.querySelectorAll('.pregunta');
+        if (preguntaActual < preguntas.length - 1) {
+            preguntas[preguntaActual].style.display = 'none';
+            preguntaActual++;
+            preguntas[preguntaActual].style.display = 'block';
+            if (preguntaActual === preguntas.length - 1) {
+                document.querySelector('button[type="button"]').style.display = 'none';
+                document.querySelector('button[type="submit"]').style.display = 'block';
+            }
+        }
+    }
+</script>-->
+<!-- Boostrap core js -->
+<script type="text/javascript" th:src="@{webjars/bootstrap/5.2.0/js/bootstrap.min.js}"></script>
+</body>
+</html>
