@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Proyecto de Arquitecto Virtual</title>
+</head>
+<body>
+<h1>Formulario de Proyecto de Arquitecto Virtual</h1>
+<form th:action="@{/formulario}" th:object="${proyecto}" method="post">
+    <label>1. Tipo de Proyecto:</label>
+    <select th:field="*{tipoProyecto}" required>
+        <option value="Piso">Piso</option>
+        <option value="Pared">Pared</option>
+        <option value="Techo">Techo</option>
+    </select><br>
+
+<!--    <label>2. Terminaciones:</label>
+    <select th:field="*{materiales}" required>
+        <option value="Material 1">Cemento</option>
+        <option value="Material 2">Madera</option>
+        <option value="Material 3">Durlock</option>
+        <option value="Material 4">Chapa zinc</option>
+        <option value="Material 5">Ceramica</option>
+    </select><br>-->
+
+    <label>3. Longitud del proyecto:</label>
+    <select th:field="*{longitud}" required>
+        <option value="2">2 metros</option>
+        <option value="3">3 metros</option>
+        <!-- Agrega más opciones según tus necesidades -->
+    </select><br>
+
+    <label>4. Ancho del proyecto:</label>
+    <select th:field="*{ancho}" required>
+        <option value="4">4 metros</option>
+        <option value="5">5 metros</option>
+        <!-- Agrega más opciones según tus necesidades -->
+    </select><br>
+
+
+
+<!--    <label>5. Presupuesto:</label>
+    <select th:field="*{presupuesto}" required>
+        <option value="Menos de $10,000">Menos de $10,000</option>
+        <option value="$10,000 - $50,000">$10,000 - $50,000</option>
+        <option value="$50,000 - $100,000">$50,000 - $100,000</option>
+        <option value="Más de $100,000">Más de $100,000</option>
+    </select><br>
+
+    <label>6. ¿Necesita instalación eléctrica?</label>
+    <select th:field="*{instalacionElectrica}" required>
+        <option value="Sí">Sí</option>
+        <option value="No">No</option>
+    </select><br>
+
+    <label>7. ¿Necesita instalación de gas?</label>
+    <select th:field="*{instalacionGas}" required>
+        <option value="Sí">Sí</option>
+        <option value="No">No</option>
+    </select><br>
+
+
+    <label>8. ¿Requiere permisos de construcción?</label>
+    <select th:field="*{permisosConstruccion}" required>
+        <option value="Sí">Sí</option>
+        <option value="No">No</option>
+    </select><br>
+
+    <label>9. ¿Tiene alguna restricción de tiempo?</label>
+    <select th:field="*{restriccionTiempo}" required>
+        <option value="Sí">Sí</option>
+        <option value="No">No</option>
+    </select><br>
+
+
+    <label>10. ¿Cuál es la ubicación del proyecto?</label>
+    <select th:field="*{ubicacion}" required>
+        <option value="Ubicación 1">Ubicación 1</option>
+        <option value="Ubicación 2">Ubicación 2</option>
+        <option value="Ubicación 3">Ubicación 3</option>
+    </select><br>-->
+
+    <button type="submit">Enviar</button>
+</form>
+</body>
+</html>
