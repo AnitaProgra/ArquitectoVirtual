@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Integrador Taller Web I</title>
+
+    <!-- Boostrap core css -->
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.0/css/bootstrap.min.css}"/>
+</head>
+
+<body>
+    <main role="main" class="container">
+        <div class="container">
+            <tr th:each="respuesta : ${respuestas.getPreguntas()}">
+                <td th:text="${respuesta.key}">com.tallerwebi.presentacion.Pregunta</td>
+                <td th:text="${respuesta.value}">Respuesta</td>
+            </tr>
+        </div>
+    </main>
+    <!-- Boostrap core js -->
+    <script type="text/javascript" th:src="@{webjars/bootstrap/5.2.0/js/bootstrap.min.js}"></script>
+</body>
+</html>

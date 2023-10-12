@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Integrador Taller Web I</title>
+
+    <!-- Boostrap core css -->
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.0/css/bootstrap.min.css}"/>
+</head>
+<body>
+<main role="main" class="container">
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+        <div id="form-inicial" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="card shadow mt-4 mb-4">
+                <div class="card-body">
+                    <form action="/guardarRespuesta" method="post" th:object="${respuesta}">
+                        <div th:each="pregunta, iterStat : ${preguntas}">
+                            <div th:if="${iterStat.index == 0}"> <!-- Muestra solo la primera pregunta al principio -->
+                                <h2 th:text="${pregunta.enunciado}">Pregunta</h2>
+                                <label th:each="opcion : ${pregunta.opciones}">
+                                    <input type="radio" th:field="*{preguntas[__${pregunta.id}__]}" th:value="${opcion}" th:text="${opcion}">
+                                </label>
+                            </div>
+                            <div th:if="${iterStat.index != 0}" style="display: none;">
+                                <h2 th:text="${pregunta.enunciado}">Pregunta</h2>
+                                <label for="altura"></label>
+                                <input type="text" th:field="*{preguntas[__${pregunta.id}__]}"  name="altura" id="altura">
+                                <label for="ancho"></label>
+                                <input type="text" th:field="*{preguntas[__${pregunta.id}__]}" name="ancho" id="ancho">
+                            </div>
+                        </div>
+                        <button type="button" id="siguiente" onclick="siguientePregunta()">Siguiente</button>
+                        <button type="submit" style="display: none;">Finalizar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script>
+    var preguntaActual = 0;
+
+    function siguientePregunta() {
+        var preguntas = document.querySelectorAll('.pregunta');
+        if (preguntaActual < preguntas.length - 1) {
+            preguntas[preguntaActual].style.display = 'none';
+            preguntaActual++;
+            preguntas[preguntaActual].style.display = 'block';
+            if (preguntaActual === preguntas.length - 1) {
+                document.querySelector('button[type="button"]').style.display = 'none';
+                document.querySelector('button[type="submit"]').style.display = 'block';
+            }
+        }
+    }
+</script>
+<!-- Boostrap core js -->
+<script type="text/javascript" th:src="@{webjars/bootstrap/5.2.0/js/bootstrap.min.js}"></script>
+</body>
+</html>
