@@ -9,6 +9,8 @@
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.0/css/bootstrap.min.css}"/>
 </head>
 <body>
+<!--Agregamos el header con th-->
+<div th:replace="header :: header"></div>
 <main role="main" class="container">
     <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
         <div id="form-inicial" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
@@ -68,7 +70,7 @@
                                         </div>
                                         <div id="botones">
                                         <a th:href="@{'cuestionario'}" class="btn btn-secondary">Volver</a>
-                                        <a href="/crearNuevoProyecto" class="btn btn-primary">Confirmar</a>
+                                        <a href="projectManager" class="btn btn-primary">Confirmar</a>
                                         </div>
                                     </div>
                             </div>

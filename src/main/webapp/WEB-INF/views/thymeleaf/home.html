@@ -93,10 +93,8 @@
 </head>
 
 <body>
-
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">UNLAM</a>
-</nav>
+<!--Agregamos el header con th-->
+<div th:replace="header :: header"></div>
 
 <div class="container">
     <div class="project-sidebar">
@@ -109,22 +107,22 @@
             </select>
         </div>
         <ul class="project-links">
-            <li><a href="#">Proyecto de Muestra 1 (En Curso)</a></li>
-            <li><a href="#">Proyecto de Muestra 2 (Terminado)</a></li>
-            <li><a href="#">Proyecto de Muestra 3 (En Curso)</a></li>
-            <li><a href="#">Proyecto de Muestra 4 (En Curso)</a></li>
-            <li><a href="#">Proyecto de Muestra 5 (Terminado)</a></li>
-            <li><a href="#">Proyecto de Muestra 6 (En Curso)</a></li>
-            <li><a href="#">Proyecto de Muestra 7 (En Curso)</a></li>
-            <li><a href="#">Proyecto de Muestra 8 (Terminado)</a></li>
-            <li><a href="#">Proyecto de Muestra 9 (En Curso)</a></li>
+            <li><a href="projectManager">Proyecto de Muestra 1 (En Curso)</a></li>
+            <li><a href="projectManager">Proyecto de Muestra 2 (Terminado)</a></li>
+            <li><a href="projectManager">Proyecto de Muestra 3 (En Curso)</a></li>
+            <li><a href="projectManager">Proyecto de Muestra 4 (En Curso)</a></li>
+            <li><a href="projectManager">Proyecto de Muestra 5 (Terminado)</a></li>
+            <li><a href="projectManager">Proyecto de Muestra 6 (En Curso)</a></li>
+            <li><a href="projectManager">Proyecto de Muestra 7 (En Curso)</a></li>
+            <li><a href="projectManager">Proyecto de Muestra 8 (Terminado)</a></li>
+            <li><a href="projectManager">Proyecto de Muestra 9 (En Curso)</a></li>
         </ul>
     </div>
 
     <div class="project-content">
         <div class="new-project">
             <h1>Nuevo Proyecto</h1>
-            <button class="btn btn-lg btn-primary">Crear Proyecto</button>
+            <a href="cuestionario" class="btn btn-lg btn-primary">Crear Proyecto</a>
         </div>
         <div class="explanatory-text">
             <p>Texto explicativo inventado sobre cómo crear un nuevo proyecto. Puedes agregar información relevante aquí.</p>
