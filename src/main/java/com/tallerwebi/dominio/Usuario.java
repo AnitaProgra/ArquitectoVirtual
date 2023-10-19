@@ -17,8 +17,6 @@ public class Usuario {
     private String password;
     private String rol;
     private Boolean activo = false;
-    private List<String> selectedOptions;
-    private String additionalInfo;
 
     public String getName() {
         return name;
@@ -26,22 +24,6 @@ public class Usuario {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public List<String> getSelectedOptions() {
-        return selectedOptions;
-    }
-
-    public void setSelectedOptions(List<String> selectedOptions) {
-        this.selectedOptions = selectedOptions;
-    }
-
-    public String getAdditionalInfo() {
-        return additionalInfo;
-    }
-
-    public void setAdditionalInfo(String additionalInfo) {
-        this.additionalInfo = additionalInfo;
     }
 
     public Long getId() {
