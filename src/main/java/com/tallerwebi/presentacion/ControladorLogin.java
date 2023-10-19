@@ -31,6 +31,8 @@ public class ControladorLogin {
         return new ModelAndView("login", modelo);
     }
 
+
+
     @RequestMapping(path = "/validar-login", method = RequestMethod.POST)
     public ModelAndView validarLogin(@ModelAttribute("datosLogin") DatosLogin datosLogin, HttpServletRequest request) {
         ModelMap model = new ModelMap();
@@ -76,7 +78,7 @@ public class ControladorLogin {
             System.out.println(request.getSession().getAttribute("ROL"));
             return new ModelAndView("redirect:/cuestionario");
         }
-        return new ModelAndView("redirect:/login");
+        return new ModelAndView("redirect:/projectManager");
     }
 }
 
