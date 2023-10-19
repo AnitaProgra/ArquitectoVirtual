@@ -76,9 +76,9 @@ public class ControladorLogin {
     public ModelAndView inicio(HttpServletRequest request) {
         if(request.getSession().getAttribute("ROL")!=null){
             System.out.println(request.getSession().getAttribute("ROL"));
-            return new ModelAndView("redirect:/cuestionario");
+            return new ModelAndView("redirect:/home");
         }
-        return new ModelAndView("redirect:/projectManager");
+        return new ModelAndView("redirect:/login");
     }
 }
 
