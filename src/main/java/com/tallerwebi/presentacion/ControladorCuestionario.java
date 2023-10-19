@@ -8,12 +8,11 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.time.Clock;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 @Controller
 public class ControladorCuestionario {
@@ -37,19 +36,16 @@ public class ControladorCuestionario {
     }
 
     @RequestMapping(path = "/guardarRespuesta", method = RequestMethod.POST)
-    public ModelAndView guardarRespuesta(@ModelAttribute("datosProyecto") DatosProyecto datosProyecto) {
-        ModelMap model = new ModelMap();
+    @ResponseBody
+    public Map<String, Object> guardarRespuesta(@ModelAttribute("datosProyecto") DatosProyecto datosProyecto) {
+        Map<String, Object> response = new HashMap<>();
+
         // Llama al servicio para validar las respuestas
-        //boolean respuestasValidas = servicioCuestionario.validarRespuestas(respuesta);
         String respuesta = servicioCuestionario.validarRespuestas(datosProyecto.getTipo_proyecto());
-        model.put("respuesta",respuesta);
-        model.put("datos",datosProyecto);
-        return new ModelAndView("respuesta",model);
-        /*if (respuestasValidas) {
-            return new ModelAndView("siguiente-proceso", model);
-        } else {
-            model.put("error", "Respuesta no válida");
-            return new ModelAndView("formulario-inicial", model);
-        }*/
+
+        response.put("respuesta", respuesta);
+        response.put("datos", datosProyecto);
+
+        return response;
     }
 }
