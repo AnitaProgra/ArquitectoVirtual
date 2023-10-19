@@ -1,0 +1,48 @@
+span{
+    font-size:30px;
+}
+
+.containerMisProyectos {
+    display: grid;
+    grid-template-columns: 2fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 10px;
+    grid-template-areas:
+            "col1"
+            "col2";
+    align-items: start;
+    padding: 10px;
+}
+
+.columna1MisProyectos {
+    grid-area: col1;
+    padding: 20px;
+    grid-column: 1/3;
+}
+
+.columna2MisProyectos {
+    grid-area: col2;
+    padding: 20px;
+    grid-column: 2;
+}
+
+.list-itemMP{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    background-color: lightgrey;
+    padding: 10px;
+    margin:2px;
+    border: 2px solid grey;
+}
+
+.edit-item-listMP{
+    align-self: end;
+}
+
+.buttonMP{
+    background-color: lightgray;
+    border-radius: 5px;
+    margin: 5px;
+    border: 2px solid grey;
+}

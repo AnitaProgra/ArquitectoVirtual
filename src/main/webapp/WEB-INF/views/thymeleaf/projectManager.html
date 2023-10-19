@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Boostrap core css -->
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{css/main.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{css/projectManager.css}"/>
+</head>
+<body>
+<!--Agregamos el header con th-->
+<div th:replace="header :: header"></div>
+
+
+<div class="container">
+    <h2>Etapas del proyecto</h2>
+    <div class="desplegablePM">
+        <h3 class="desplegablePM-title" id="desplegablePM-toggle">Materiales</h3>
+        <ul class="desplegablePM-menu" id="desplegablePM-menu">
+            <li>
+                <div>
+                    <input type="checkbox" class="checkbox-itemMP">
+                    <p>item 1</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <input type="checkbox" class="checkbox-itemMP">
+                    <p>item 2</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <input type="checkbox" class="checkbox-itemMP">
+                    <p>Item 3</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+</div>
+
+<script th:src="@{js/projectManager.js}"></script>
+</body>
+</html>

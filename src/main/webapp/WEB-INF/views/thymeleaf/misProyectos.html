@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Mis Proyectos</title>
+
+    <!-- Boostrap core css -->
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{css/main.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{css/misproyectos.css}"/>
+</head>
+<body>
+    <!--Agregamos el header con th-->
+    <div th:replace="header :: header"></div>
+
+
+    <div class="containerMisProyectos">
+        <!--se agregaran items cuantos sean los proyectos del user-->
+        <div class="columna1MisProyectos">
+            <ul>
+                <li class="list-itemMP">
+                    <span>Piso garage</span>
+                    <div class="edit-item-listMP">
+                        <a href="" class=""></a><a href="">borrar</a>
+                    </div>
+                </li>
+                <li class="list-itemMP">
+                    <span>Pared Patio</span>
+                    <div class="edit-item-listMP">
+                        <a href="">renombrar</a>
+                        <a href="">borrar</a>
+                    </div>
+                </li>
+                <li class="list-itemMP">
+                    <span>Pieza trasera</span>
+                    <div class="edit-item-listMP">
+                        <a href="">renombrar</a>
+                        <a href="">borrar</a>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="columna2MisProyectos"><a href="" class="buttonMP">Home</a><a href="" class="buttonMP">Iniciar Proyecto</a></div>
+    </div>
+</body>
+</html>

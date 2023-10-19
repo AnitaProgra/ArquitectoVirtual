@@ -1,0 +1,31 @@
+/* Estilos para el menú desplegable */
+.desplegablePM {
+}
+
+.desplegablePM-title {
+    cursor: pointer;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.desplegablePM-menu {
+    display: none;
+    list-style: upper-roman;
+    padding: 0;
+    margin: 0;
+}
+
+.desplegablePM-menu li {
+    background-color: #fff;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.desplegablePM-open {
+    display: block;
+}
+
+/* Estilos para elementos marcados */
+.desplegablePM-open .checkeado {
+    text-decoration: line-through; /* Tachar el texto de los elementos marcados */
+}
