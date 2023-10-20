@@ -106,16 +106,13 @@
                 <option value="terminados">Proyectos Terminados</option>
             </select>
         </div>
+        <div th:if="${#lists.isEmpty(proyectos)}">
+            <p>No hay proyectos disponibles.</p>
+        </div>
         <ul class="project-links">
-            <li><a href="projectManager">Proyecto de Muestra 1 (En Curso)</a></li>
-            <li><a href="projectManager">Proyecto de Muestra 2 (Terminado)</a></li>
-            <li><a href="projectManager">Proyecto de Muestra 3 (En Curso)</a></li>
-            <li><a href="projectManager">Proyecto de Muestra 4 (En Curso)</a></li>
-            <li><a href="projectManager">Proyecto de Muestra 5 (Terminado)</a></li>
-            <li><a href="projectManager">Proyecto de Muestra 6 (En Curso)</a></li>
-            <li><a href="projectManager">Proyecto de Muestra 7 (En Curso)</a></li>
-            <li><a href="projectManager">Proyecto de Muestra 8 (Terminado)</a></li>
-            <li><a href="projectManager">Proyecto de Muestra 9 (En Curso)</a></li>
+            <li th:each="proyecto: ${proyectos}">
+                <a href="misProyectos/id=1" th:text="${proyecto.nombreProyecto}"></a>
+            </li>
         </ul>
     </div>
 
