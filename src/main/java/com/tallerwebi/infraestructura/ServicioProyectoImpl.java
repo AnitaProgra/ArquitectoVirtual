@@ -23,7 +23,7 @@ public class ServicioProyectoImpl implements ServicioProyecto {
     }
 
     @Override
-    public List<Proyecto> todosLosProyectosPorId(Integer id) {
+    public List<Proyecto> todosLosProyectosPorIdUsuario(Integer id) {
         List<Proyecto> proyectos = repositorioProyecto.proyectosPorId(id);
         if(proyectos!=null){
             return proyectos;
@@ -32,7 +32,26 @@ public class ServicioProyectoImpl implements ServicioProyecto {
     }
 
     @Override
-    public void guardarProyecto(Proyecto proyecto) throws UsuarioExistente {
+    public Proyecto buscarProyecto(Integer id) {
+        Proyecto proyecto = repositorioProyecto.buscarProyecto(id);
+        if(proyecto!=null){
+            return proyecto;
+        }
+        return null;
+    }
+
+    @Override
+    public void guardarProyecto(Proyecto proyecto) {
+
+    }
+
+    @Override
+    public void eliminarProyecto(Proyecto proyecto) {
+
+    }
+
+    @Override
+    public void modificarProyecto(Proyecto proyecto) {
 
     }
 }

@@ -6,6 +6,11 @@ import java.util.List;
 
 public interface ServicioProyecto {
 
-    List<Proyecto> todosLosProyectosPorId(Integer id);
-    void guardarProyecto(Proyecto proyecto) throws UsuarioExistente;
+    List<Proyecto> todosLosProyectosPorIdUsuario(Integer id);
+    Proyecto buscarProyecto(Integer id);
+    void guardarProyecto(Proyecto proyecto);
+    void eliminarProyecto(Proyecto proyecto);
+    void modificarProyecto(Proyecto proyecto);
+
+
 }

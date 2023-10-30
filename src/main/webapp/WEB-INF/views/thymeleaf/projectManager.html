@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <!-- Boostrap core css -->
     <link rel="stylesheet" th:href="@{css/bootstrap.min.css}"/>
@@ -10,36 +10,18 @@
 <!--Agregamos el header con th-->
 <div th:replace="header :: header"></div>
 
+<h1>Proyecto <span th:text="${proyecto.nombreProyecto}" ></span></h1>
+<div class="container" th:with="previousEtapa=null">
 
-<div class="container">
-    <h2>Etapas del proyecto</h2>
-    <div class="desplegablePM">
-        <h3 class="desplegablePM-title" id="desplegablePM-toggle">Materiales</h3>
-        <ul class="desplegablePM-menu" id="desplegablePM-menu">
-            <li>
-                <div>
-                    <input type="checkbox" class="checkbox-itemMP">
-                    <p>item 1</p>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <input type="checkbox" class="checkbox-itemMP">
-                    <p>item 2</p>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <input type="checkbox" class="checkbox-itemMP">
-                    <p>Item 3</p>
-                </div>
-            </li>
-        </ul>
-    </div>
+    <ul class="project-links">
+        <li th:each="actividadProyecto: ${actividadesProyecto}">
+            <h3 th:text="${actividadProyecto.idActividad + ' - ' +actividadProyecto.actividad}"></h3>
+        </li>
 
-
+    </ul>
 </div>
 
 <script th:src="@{js/projectManager.js}"></script>
 </body>
 </html>
+
