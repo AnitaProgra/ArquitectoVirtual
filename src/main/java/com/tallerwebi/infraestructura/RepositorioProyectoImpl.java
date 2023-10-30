@@ -32,7 +32,10 @@ public class RepositorioProyectoImpl implements RepositorioProyecto {
 
     @Override
     public Proyecto buscarProyecto(Integer id) {
-        return null;
+        final Session session = sessionFactory.getCurrentSession();
+        return (Proyecto) session.createCriteria(Proyecto.class)
+                .add(Restrictions.eq("id", id))
+                .uniqueResult();
     }
 
     @Override

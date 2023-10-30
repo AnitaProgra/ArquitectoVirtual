@@ -111,7 +111,7 @@
         </div>
         <ul class="project-links">
             <li th:each="proyecto: ${proyectos}">
-                <a href="misProyectos/id=1" th:text="${proyecto.nombreProyecto}"></a>
+                <a th:href="@{/projectManager(id=${proyecto.id})}" th:text="${proyecto.nombreProyecto}"></a>
             </li>
         </ul>
     </div>
